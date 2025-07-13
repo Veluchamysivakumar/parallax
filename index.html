@@ -23,7 +23,7 @@
     <script>
         window.addEventListener("deviceorientation", (evt) => 
         {
-        const angle = evt.gamma;
+        const angle = evt.beta;
         const opacity = 
             Math.min(1, Math.max(0, invLerp(1, 5, angle)));
         imgB.style.opacity = opacity;
