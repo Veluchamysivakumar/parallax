@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+<style>
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        width: auto;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+    <img id="imgA" src="Perumal.JPG" />
+    <img id="imgB" src="Mahalakshmi.JPG" />
+    <script>
+        window.addEventListener("deviceorientation", (evt) => 
+        {
+        const angle = evt.gamma;
+        const opacity = 
+         Math.min(1, Math.max(0, invLerp(50, 70, angle)));
+        imgB.style.opacity = opacity;
+        imgA.style.opacity = 1 - opacity;
+         });
+
+         function invLerp(a, b, val) {
+        return (val - a) / (b - a);
+        }
+    </script>
+ 
+</body>
+</html>
